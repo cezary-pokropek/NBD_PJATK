@@ -1,0 +1,2 @@
+MATCH (p:Person)-[:WROTE]->(m:Movie)<-[:DIRECTED]-(p:Person)
+RETURN DISTINCT p.name AS writerDirector, m.title AS Movie

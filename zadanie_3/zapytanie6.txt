@@ -1,0 +1,4 @@
+MATCH (a:Person)-[:ACTED_IN]->(m:Movie)
+WITH  a, count(m) AS numMovies, collect(m.title) AS movies
+WHERE numMovies >= 1
+RETURN a.name AS Actor, numMovies AS moviesCount

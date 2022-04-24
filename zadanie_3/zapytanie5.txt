@@ -1,0 +1,1 @@
+MATCH (people:Person)-[:ACTED_IN]->(:Movie {title: "The Matrix"}) RETURN DISTINCT people.name AS Actor

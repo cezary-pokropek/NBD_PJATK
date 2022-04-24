@@ -1,0 +1,2 @@
+MATCH (h:Person {name:"Hugo Weaving"})-[:ACTED_IN]->(m:Movie)<-[:ACTED_IN]-(k:Person {name:"Keanu Reeves"})
+RETURN DISTINCT m.title AS Movie
