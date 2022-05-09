@@ -1,0 +1,3 @@
+MATCH path=((start:town { name:"Darjeeling" })-[*1..5]-(stop:peak { name:"Sandakphu" }))
+RETURN path, reduce(dist=0, path IN relationships(path)|dist + path.distance) 
+AS distTotal ORDER BY distTotal ASC

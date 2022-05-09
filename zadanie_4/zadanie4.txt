@@ -1,0 +1,1 @@
+MATCH (start:town{name:"Darjeeling"})-[path:twowheeler]->(locations) WHERE path.summer="true" RETURN path

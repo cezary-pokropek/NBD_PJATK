@@ -1,0 +1,4 @@
+MATCH (start:town { name:"Darjeeling" }),(stop:peak { name:"Sandakphu" })
+WITH start,stop
+MATCH path = ShortestPath((start)-[*..5]-(stop))
+RETURN path
