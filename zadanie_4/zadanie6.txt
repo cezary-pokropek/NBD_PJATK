@@ -1,0 +1,5 @@
+MATCH (airport:Airport)
+WHERE airport.name <> 'LAX'
+MATCH flight = (origin:Airport { name:"LAX" })<-[:ORIGIN]-()-[*]->(airport)
+WHERE REDUCE(price = 0, f IN [node IN NODES(flight) WHERE 'Flight' IN LABELS(node)] | price + [(f)<-[:ASSIGN]-(ticket) | ticket.price][0] ) < 3000
+RETURN airport,flight

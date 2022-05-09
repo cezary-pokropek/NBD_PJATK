@@ -1,0 +1,6 @@
+MATCH path = (airport1:Airport)<-[:ORIGIN]-(:Flight)-[:DESTINATION]->(airport2:Airport)<-[:ORIGIN]-(:Flight)-[:DESTINATION]->(airport3:Airport)
+WHERE (airport1 <> airport2) AND (airport1 <> airport3) AND (airport2 <> airport3)
+WITH path, REDUCE(acc = 0, n IN [x IN NODES(path) WHERE 'Flight' IN LABELS(x)] | acc + [(n)<-[:ASSIGN]-(ticket) | ticket.price][0]) AS price
+RETURN path, price
+ORDER BY price ASC 
+LIMIT 1
