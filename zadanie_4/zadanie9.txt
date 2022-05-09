@@ -1,0 +1,2 @@
+MATCH (flight:Flight)-[:DESTINATION|:ORIGIN]->(airport:Airport)
+RETURN flight.airline AS Flight_Airline, COUNT(DISTINCT(airport)) AS Unique_Cities_Count
