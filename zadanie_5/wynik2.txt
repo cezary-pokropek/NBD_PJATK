@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8ypz/fqY61dZAhBIZ81gZTENZ7/BlAQA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s25549>; rel="up"
+Last-Modified: Fri, 27 May 2022 13:59:17 GMT
+ETag: "4qnJYKhQT70TISU04t4WMJ"
+Date: Fri, 27 May 2022 14:09:25 GMT
+Content-Type: application/json
+Content-Length: 71
+
+{"name": "Andrzej", "surname": "Babicki", "salary": 5600, "year": 1985}%

@@ -1,0 +1,33 @@
+1.
+curl -i -XPUT -H "Content-Type:application/json" -d '{"name": "Andrzej", "surname": "Babicki", "salary": 5600, "year": 1985}' http://localhost:8098/buckets/s25549/keys/Pracownik1
+curl -i -XPUT -H "Content-Type:application/json" -d '{"name": "Michal", "surname": "Romanowski", "salary": 8400, "year": 1987}' http://localhost:8098/buckets/s25549/keys/Pracownik2
+curl -i -XPUT -H "Content-Type:application/json" -d '{"name": "Zdzislaw", "surname": "Kowalski", "salary": 8700, "year": 1977 }' http://localhost:8098/buckets/s25549/keys/Pracownik3
+curl -i -XPUT -H "Content-Type:application/json" -d '{"name": "Roman", "surname": "Michalowski", "salary": 7500, "year": 2000}' http://localhost:8098/buckets/s25549/keys/Pracownik4
+curl -i -XPUT -H "Content-Type:application/json" -d '{"name": "Mieczyslaw", "surname": "Biedrzycki", "salary": 6900, "year": 1989}' http://localhost:8098/buckets/s25549/keys/Pracownik5
+
+2.
+curl -i -XGET http://localhost:8098/buckets/s25549/keys/Pracownik1
+
+3.
+curl -i -XPUT -H 'Content-Type: application/json' -d '{"name": "Andrzej", "surname": "Babicki", "salary": 5600, "year": 1985, isSmart:"true"}' http://localhost:8098/buckets/s25549/keys/Pracownik1
+
+4.
+curl -i -XPUT -H "Content-Type:application/json" -d '{"name": "Andrzej", "surname": "Babicki", "salary": 5600, "year": 1985}' http://localhost:8098/buckets/s25549/keys/Pracownik1
+
+5. 
+curl -i -XPUT -H "Content-Type:application/json" -d '{"name": "Andrzej", "surname": "Babicki", "salary": 10000, "year": 1985}' http://localhost:8098/buckets/s25549/keys/Pracownik1
+
+6.
+curl -i -XDELETE http://localhost:8098/buckets/s25549/keys/Pracownik1
+
+7.
+curl -i http://localhost:8098/buckets/s25549/keys/Pracownik6
+
+8.
+curl -i -XPOST -H "Content-Type:application/json" -d '{"name": "Marian"}' http://localhost:8098/buckets/s25549/keys
+
+9.
+curl -i http://localhost:8098/buckets/s25549/keys
+
+10.
+curl -i -XDELETE http://localhost:8098/buckets/s25549/keys
