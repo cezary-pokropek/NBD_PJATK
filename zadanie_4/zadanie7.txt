@@ -1,0 +1,4 @@
+MATCH path = (laxport:Airport {name:"LAX" })<-[:ORIGIN]-(f:Flight)-[*1..8]-(dayport:Airport{name: 'DAY' })
+WITH path, REDUCE(acc = 0, n IN [x IN NODES(path) WHERE 'Flight' IN LABELS(x)] | acc + [(n)<-[:ASSIGN]-(ticket) | ticket.price][0]) as price
+RETURN path, price
+ORDER BY price
